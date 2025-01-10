@@ -16,7 +16,6 @@ const App = () => {
 
   return (
     <div>
-      <--Test-->
       <Header />
       <TaskInput onAddTask={addTask} />
       <TaskList tasks={tasks} onRemoveTask={removeTask} />
