@@ -5,18 +5,21 @@ import InputField from "./components/InputField";
 
 function App() {
   const [cards, setCards] = useState([
-    { name: "Memet", job: "Festomitarbeiter" },
 
   ]);
   const [name, setName] = useState("");
   const [job, setJob] = useState("");
+  const [image, setImage] = useState("");
   const [search, setSearch] = useState("");
 
   const addCard = () => {
     if (name.trim() && job.trim()) {
-      setCards([...cards, { name, job }]);
+      const imageURL = image ? URL.createObjectURL(image) : "";
+      setCards([...cards, { name, job, image: imageURL }]);
       setName("");
       setJob("");
+      setImage("");
+      document.querySelector('input[type="file"]').value = "";
     }
   };
 
@@ -39,6 +42,12 @@ function App() {
       <div className="flex items-center gap-x-4 mb-4">
         <InputField label="Name" value={name} onChange={setName} />
         <InputField label="Job" value={job} onChange={setJob} />
+        <InputField
+          label="Bild hochladen"
+          value={image}
+          onChange={setImage}
+          type="file"
+        />
         <HoverButton addCard={addCard} />
       </div>
       <div className="mb-6">

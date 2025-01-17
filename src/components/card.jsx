@@ -1,12 +1,12 @@
 import React from "react";
 
-const Card = ({ name, job, onRemove }) => {
+const Card = ({ name, job, image, onRemove }) => {
     return (
         <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
                 <img
-                    className="w-16 h-16 rounded-full"
-                    src="https://www.w3schools.com/howto/img_avatar.png"
+                    className="w-16 h-16 rounded-full object-cover"
+                    src={image || "https://www.w3schools.com/howto/img_avatar.png"}
                     alt="Avatar"
                 />
                 <div>
