@@ -6,7 +6,7 @@ const InputField = ({ label, value, onChange, type = "text" }) => {
             <label className="block text-gray-700 font-medium mb-2">{label}</label>
             <input
                 type={type}
-                value={type === "file" ? undefined : value} // Verhindert das Setzen von null für datei Eingabefelder
+                value={type === "file" ? undefined : value}
                 onChange={(e) =>
                     onChange(type === "file" ? e.target.files[0] : e.target.value)
                 }

@@ -16,7 +16,6 @@ const Card = ({ name, job, image, onRemove }) => {
             </div>
             <button
                 onClick={onRemove}
-                className="bg-red-500 text-white py-1 px-3 rounded-lg hover:bg-red-600 transition-colors duration-300"
             >
                 Löschen
             </button>
